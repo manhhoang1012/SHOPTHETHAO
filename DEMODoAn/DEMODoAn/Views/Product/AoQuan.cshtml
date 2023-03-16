@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DEMODoAn.Models.SanPham>
+
+@{
+    ViewBag.Title = "AoQuan";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="fashion_section">
+
+
+    <div class="container">
+        <h1 class="fashion_taital">Áo quần</h1>
+        <div class="fashion_section_2">
+            <div class="row">
+                @foreach (var item in Model)
+
+                {
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="box_main">
+                            <div class="panel panel-default">
+                                <div class="panel panel-heading" , style="text-align: center">
+                                    <h4>@item.tensanpham</h4>
+                                </div>
+                                <div class="panel-body" , style="text-align:center">
+                                    <p class="price_text">Giá:   <span style="color: #262626;">@item.giaban VND</span></p>
+
+                                    <p><img src="@item.hinh1"></p>
+
+                                </div>
+                                <div class="panel-footer clearfix">
+                                    <div class="pull-right">
+
+                                        <p>@item.soluongton <strong>có sẵn</strong></p>
+                                    </div>
+
+                                    <div class="btn_main">
+                                        <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                        <div class="seemore_bt"><a href='@Url.Action("Detail", "Product", new {id = item.masanpham})'>Xem thêm</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+

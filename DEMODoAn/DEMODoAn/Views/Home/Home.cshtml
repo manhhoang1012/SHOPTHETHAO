@@ -1,0 +1,17 @@
+﻿@using DEMODoAn.Models
+@{
+
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@{
+    IEnumerable<DanhMuc> listdanhmuc = (IEnumerable<DanhMuc>)ViewBag.listdanhmuc;
+    IEnumerable<SanPham> listsanpham = (IEnumerable<SanPham>)ViewBag.listsanpham;
+
+}
+
+@Html.Partial("~/Views/NewFolder1/ViewPartialDanhMuc.cshtml", listdanhmuc)
+
+
+<h1 style="text-align:center;">Sản phẩm được mua nhiều nhất</h1>
+@Html.Partial("~/Views/NewFolder1/ViewPartialNewProducts.cshtml", listsanpham)

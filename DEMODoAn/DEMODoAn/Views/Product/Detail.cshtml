@@ -1,0 +1,58 @@
+﻿@model DEMODoAn.Models.SanPham
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<div style="text-align:center">
+   
+    <hr />
+    <dl class="dl-horizontal">
+
+
+
+
+        <dd>
+            <h1>@Html.DisplayFor(model => model.tensanpham)</h1>
+        </dd>
+
+
+
+        <div class="thumbnail">
+            <img src="@Html.DisplayFor(model=>model.hinh1)" height="350" , width="300" alt="thumbnail">
+        </div>
+
+
+
+       
+
+        <dt>
+            @Html.DisplayFor(model => model.mota)
+        </dt>
+
+
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.giaban)
+        </dd>
+
+
+
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.soluongton) có sẵn
+        </dd>
+
+    </dl>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.masanpham }) |
+    @Html.ActionLink("Back to List", "ListSanPham")
+</p>
